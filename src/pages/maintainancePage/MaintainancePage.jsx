@@ -1,9 +1,11 @@
-import { Delete } from "@material-ui/icons";
+import { Delete, Http } from "@material-ui/icons";
 import "./maintainance.css"
 import { DataGrid } from '@material-ui/data-grid'
 import {Link} from "react-router-dom";
 import {Maintainancerows} from "../../dummyData"
-import { useState } from "react";
+import axios from 'axios';
+import { useState, useEffect } from "react";
+import { async } from "q";
 
 export default function MaintainancePage() {
 
@@ -16,20 +18,36 @@ export default function MaintainancePage() {
     // table w/o the row in it.
 
     
-    const [data, setData] = useState(Maintainancerows);
 
-    const deleteFunction =(id) =>{
-        setData(data.filter((row)=>row.id !== id))
+    const [data, setData] = useState([]);
+    async function getAllData(){
+        const result = await axios.get("http://127.0.0.1:3002/maintainancePage/")
+        console.log(result)
+        setData(result.data)
+    }
+    
+    useEffect(()=>{
+        getAllData()
+    },[])
+    
+    //delete is an onclick fn so not inside asyn as above, write a separate asyn fn and then call it 
+    async function detelewait(id){
+        await axios.delete(`http://127.0.0.1:3002/maintainancePage/${id}`)
+    }
+
+    const deleteFunction = (id) =>{
+        detelewait(id)
+        getAllData()
     }
 
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'Date', headerName: 'Date', width: 150, type:'number' },
-        { field: 'Reason', headerName: 'Reason', width: 250 },
-        { field: 'Status', headerName: 'Status', width: 150 },
+        { field: 'date', headerName: 'Date', width: 150, type:'number' },
+        { field: 'reason', headerName: 'Reason', width: 250 },
+        { field: 'status', headerName: 'Status', width: 150 },
         {
-          field: 'Location',
+          field: 'location',
           headerName: 'Location',
           description: 'This column has a value getter and is not sortable.',
           sortable: false,
