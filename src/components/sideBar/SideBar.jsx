@@ -1,89 +1,106 @@
 import "./SideBar.css"
 import { Link } from "react-router-dom";
-import {LineStyle, Assessment, Add, Remove, Update, LocalSee, PriorityHigh, Build, Map, Schedule, Person} from "@material-ui/icons"
+import {LineStyle, Assessment, Add, Remove, Update, LocalSee, PriorityHigh, Build, Map, Schedule, Person, ViewAgenda, CameraAltRounded, VideoLabel, RemoveCircleOutline} from "@material-ui/icons"
 export default function SideBar() {
   return (
-    <div className="sidebar">
-      <div className="sideBarMenuWrapper"></div>
-        <div className="sideBarMenu">
-            <h3 className="sideBarTitle">Dashboard</h3>
-                <ul className="sidebarList">
-                    
-                    <Link to ="/home">
-                    <li className="sidebarListItems ">
-                        <LineStyle />
-                            Home
-                    </li>
-                    </Link>
 
-                    <li className="sidebarListItems">
-                        <Schedule />
-                            Schedule
-                    </li>
+      <><div class="sidebar">
+         <h3 className="sideBarTitle">Dashboard</h3>
+          <a href="/home">Home</a>
+          <a href="">Schedule</a>
+          <a href="">Manage Profile</a>
+          
 
-                    <li className="sidebarListItems">
-                        <Person />
-                        Manage Profile
-                    </li>
+          <h3 className="sideBarTitle" >Cameras</h3>
+          <a href="">View Cameras</a>
+          <a href="">Cameras Footage</a>
+          <a href="">Remove Camera</a>
+          
 
-                </ul>
-        </div>
+          <h3 className="sideBarTitle">Notifications</h3>
+          <a href="">Reports</a>
+          <a href="">Alerts</a>
+          <a href="/maintain">Maintainance Requests</a>
+          
+          
+      </div></>
 
-            <h3 className="sideBarTitle">Cameras</h3>
-            <ul className="sidebarList">
-                <li className="sidebarListItems">
-                    <Add />
-                    Add Camera
-                </li>
+      
 
-                <li className="sidebarListItems">
-                    <Remove />
-                    Remove Camera
-                </li>
+    // <div className="sidebar">
+    //   <div className="sideBarMenuWrapper"></div>
+    //     <div className="sideBarMenu">
+    //         <h3 className="sideBarTitle">Dashboard</h3>
+    //             <ul className="sidebarList">
+                
+    //             <a class="active" href="/home"><LineStyle />Home</a>
+    //             <a class="active" href=""><Schedule />Schedule</a>
+    //             <a class="active" href=""><Person />Manage Profile</a>
 
-                <li className="sidebarListItems">
-                    <Update />
-                    Update Camera
-                </li>
+    //                 {/* <li className="sidebarListItems">
+    //                     <Schedule />
+    //                         Schedule
+    //                 </li>
 
-                <li className="sidebarListItems">
-                    <LocalSee />
-                    View Camera
-                </li>
+    //                 <li className="sidebarListItems">
+    //                     <Person />
+    //                     Manage Profile
+    //                 </li> */}
 
-            </ul>
+    //             </ul>
+    //     </div>
+
+    //         <h3 className="sideBarTitle">Cameras</h3>
+    //         <ul className="sidebarList">
+    //             <li className="sidebarListItems">
+    //                 <CameraAltRounded />
+    //                 View Cameras
+    //             </li>
+
+    //             <li className="sidebarListItems">
+    //                 <VideoLabel />
+    //              Cameras Footage
+    //             </li>
+
+    //             <li className="sidebarListItems">
+    //                 <RemoveCircleOutline />
+    //                 Remove Camera
+    //             </li>
+
+                
+    //         </ul>
 
             
-            <h3 className="sideBarTitle">Notifications</h3>
-            <ul className="sidebarList">
-                <li className="sidebarListItems">
-                    <Assessment />
-                    Reports
-                </li>
+    //         <h3 className="sideBarTitle">Notifications</h3>
+    //         <ul className="sidebarList">
+    //             <li className="sidebarListItems">
+    //                 <Assessment />
+    //                 Reports
+    //             </li>
 
-                <li className="sidebarListItems">
-                    <PriorityHigh />
-                    Alerts
-                </li>
+    //             <li className="sidebarListItems">
+    //                 <PriorityHigh />
+    //                 Alerts
+    //             </li>
                 
-                <Link to ="/maintain">
-                <li className="sidebarListItems">
-                    <Build />
-                    Maintainance Requets
-                </li>
-                </Link>
+    //             <Link to ="/maintain">
+    //             <li className="sidebarListItems">
+    //                 <Build />
+    //                 Maintainance Requets
+    //             </li>
+    //             </Link>
 
-                <li className="sidebarListItems">
-                    <Map />
-                    Maps
-                </li>
+    //             <li className="sidebarListItems">
+    //                 <Map />
+    //                 Maps
+    //             </li>
 
-            </ul>
+    //         </ul>
 
 
 
             
           
-    </div>
+    // </div>
   );
 }
