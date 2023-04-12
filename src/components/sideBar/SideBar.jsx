@@ -9,15 +9,16 @@ export default function SideBar() {
           <a href="/home">Home</a>
           <a href="">Schedule</a>
           <a href="">Manage Profile</a>
+          <a href="">Map View</a>
           
 
-          <h3 className="sideBarTitle" >Cameras</h3>
-          <a href="">View Cameras</a>
-          <a href="">Cameras Footage</a>
-          <a href="">Remove Camera</a>
+          <h3 className="sideBarTitle" >Camera</h3>
+          <a href="/viewCameras">View Camera</a>
+          <a href="/viewCameraFootage">Camera Footage</a>
+
           
 
-          <h3 className="sideBarTitle">Notifications</h3>
+          <h3 className="sideBarTitle">Maintainance</h3>
           <a href="">Reports</a>
           <a href="">Alerts</a>
           <a href="/maintain">Maintainance Requests</a>
